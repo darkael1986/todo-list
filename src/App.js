@@ -45,6 +45,13 @@ function App() {
     setTodos(newTodos);
   };
 
+  const deleteTodos = (text)=>{
+    const todoIndex = todos.findIndex(todo => todo.text === text );
+    const newTodos = [...todos];
+    newTodos.splice(todoIndex,1)
+    setTodos(newTodos);
+  };
+
 
   return (
     <React.Fragment>
@@ -64,6 +71,7 @@ function App() {
           text = {todo.text}
           completed={todo.completed}
           onComplete = {() => completTodos(todo.text)}
+          onDelete = {() => deleteTodos(todo.text)}
            />
         ))}
       </TodoList>

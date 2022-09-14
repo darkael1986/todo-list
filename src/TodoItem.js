@@ -3,9 +3,6 @@ import './TodoItem.css';
 
 function TodoItem(props) {
 
-  const deleteTodo = (msg)=>{
-    alert(msg);
-  }
 
 
   return (
@@ -19,7 +16,7 @@ function TodoItem(props) {
         {props.text}
       </p>
       <span className="Icon Icon-delete"
-      onClick ={()=> deleteTodo(`Borraste ${props.text}`)}
+      onClick ={props.onDelete}
       >
         X
       </span>
